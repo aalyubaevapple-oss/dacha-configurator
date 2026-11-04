@@ -3,11 +3,19 @@
   "brand": "Демо-производитель",
   "badge": "Демо-версия",
   "title": "Дачный домик",
-  "subtitle": "Выберите размеры и материалы, затем настройте планировку. Модель и цена обновляются сразу.",
+  "subtitle": "Выберите готовый проект или соберите свой: размеры, материалы, терраса, планировка. Модель и цена обновляются сразу.",
   "accent": "#2f5d46",
   "limits": {
-    "length": { "min": 3, "max": 9, "step": 0.5 },
-    "width": { "min": 3, "max": 7, "step": 0.5 }
+    "length": {
+      "min": 3,
+      "max": 9,
+      "step": 0.5
+    },
+    "width": {
+      "min": 3,
+      "max": 7,
+      "step": 0.5
+    }
   },
   "defaults": {
     "length": 6,
@@ -20,131 +28,887 @@
     "windowFrame": "white",
     "doorType": "wood",
     "plan": {
-      "tree": { "split": "v", "r": 0.38, "door": 0.5, "a": { "room": "kitchen" }, "b": { "room": "room" } },
+      "tree": {
+        "split": "v",
+        "r": 0.38,
+        "door": 0.5,
+        "a": {
+          "room": "kitchen"
+        },
+        "b": {
+          "room": "room"
+        }
+      },
       "openings": [
-        { "id": "d1", "kind": "door", "wall": "front", "pos": 0.25 },
-        { "id": "w1", "kind": "window", "type": "standard", "wall": "front", "pos": 0.75 },
-        { "id": "w2", "kind": "window", "type": "standard", "wall": "right", "pos": 0.5 }
+        {
+          "id": "d1",
+          "kind": "door",
+          "wall": "front",
+          "pos": 0.25
+        },
+        {
+          "id": "w1",
+          "kind": "window",
+          "type": "standard",
+          "wall": "front",
+          "pos": 0.75
+        },
+        {
+          "id": "w2",
+          "kind": "window",
+          "type": "standard",
+          "wall": "right",
+          "pos": 0.5
+        }
       ]
-    }
+    },
+    "roofType": "gable",
+    "foundation": "piles",
+    "package": "standard",
+    "construction": "frame",
+    "terrace": {
+      "type": "none",
+      "depth": 2
+    },
+    "canopy": true
   },
   "wallMaterials": [
     {
-      "id": "imitation", "name": "Имитация бруса", "note": "Ровная доска 15 см", "texture": "imitation",
+      "id": "imitation",
+      "name": "Имитация бруса",
+      "note": "Ровная доска 15 см",
+      "texture": "imitation",
       "finishes": [
-        { "id": "natural", "name": "Натуральная сосна", "color": "#d6a465", "trim": "#f5f1e8", "door": "#6a4329" },
-        { "id": "oak", "name": "Светлый дуб", "color": "#e9d3a8", "trim": "#5b3e2a", "door": "#5b3e2a" },
-        { "id": "teak", "name": "Тик", "color": "#a8693a", "trim": "#f2ede3", "door": "#4a2e1d" },
-        { "id": "walnut", "name": "Орех", "color": "#6a4129", "trim": "#efe8da", "door": "#d0a26a" }
+        {
+          "id": "natural",
+          "name": "Натуральная сосна",
+          "color": "#d6a465",
+          "trim": "#f5f1e8",
+          "door": "#6a4329"
+        },
+        {
+          "id": "oak",
+          "name": "Светлый дуб",
+          "color": "#e9d3a8",
+          "trim": "#5b3e2a",
+          "door": "#5b3e2a"
+        },
+        {
+          "id": "teak",
+          "name": "Тик",
+          "color": "#a8693a",
+          "trim": "#f2ede3",
+          "door": "#4a2e1d"
+        },
+        {
+          "id": "walnut",
+          "name": "Орех",
+          "color": "#6a4129",
+          "trim": "#efe8da",
+          "door": "#d0a26a"
+        }
       ]
     },
     {
-      "id": "blockhouse", "name": "Блок-хаус", "note": "Как сруб из бревна", "texture": "blockhouse",
+      "id": "blockhouse",
+      "name": "Блок-хаус",
+      "note": "Как сруб из бревна",
+      "texture": "blockhouse",
       "finishes": [
-        { "id": "natural", "name": "Натуральная сосна", "color": "#dcaa68", "trim": "#7a4b2a", "door": "#6a4329" },
-        { "id": "honey", "name": "Мёд", "color": "#c98b45", "trim": "#5a3820", "door": "#5a3820" },
-        { "id": "rosewood", "name": "Палисандр", "color": "#83492d", "trim": "#e9dfcb", "door": "#d4a56a" },
-        { "id": "silver", "name": "Серебристый", "color": "#b8b2a6", "trim": "#4a4542", "door": "#4a4542" }
+        {
+          "id": "natural",
+          "name": "Натуральная сосна",
+          "color": "#dcaa68",
+          "trim": "#7a4b2a",
+          "door": "#6a4329"
+        },
+        {
+          "id": "honey",
+          "name": "Мёд",
+          "color": "#c98b45",
+          "trim": "#5a3820",
+          "door": "#5a3820"
+        },
+        {
+          "id": "rosewood",
+          "name": "Палисандр",
+          "color": "#83492d",
+          "trim": "#e9dfcb",
+          "door": "#d4a56a"
+        },
+        {
+          "id": "silver",
+          "name": "Серебристый",
+          "color": "#b8b2a6",
+          "trim": "#4a4542",
+          "door": "#4a4542"
+        }
       ]
     },
     {
-      "id": "lining", "name": "Вагонка «штиль»", "note": "Узкая доска 9 см под покраску", "texture": "lining",
+      "id": "lining",
+      "name": "Вагонка «штиль»",
+      "note": "Узкая доска 9 см под покраску",
+      "texture": "lining",
       "finishes": [
-        { "id": "natural", "name": "Сосна", "color": "#dcb07a", "trim": "#f5f1e8", "door": "#6a4329" },
-        { "id": "white", "name": "Белая", "color": "#efece5", "trim": "#3a3d41", "door": "#3a3d41" },
-        { "id": "gray", "name": "Серая", "color": "#a9aca8", "trim": "#f4f2ee", "door": "#5a3e2b" },
-        { "id": "olive", "name": "Олива", "color": "#8a9070", "trim": "#f4f2ee", "door": "#5a3e2b" }
+        {
+          "id": "natural",
+          "name": "Сосна",
+          "color": "#dcb07a",
+          "trim": "#f5f1e8",
+          "door": "#6a4329"
+        },
+        {
+          "id": "white",
+          "name": "Белая",
+          "color": "#efece5",
+          "trim": "#3a3d41",
+          "door": "#3a3d41"
+        },
+        {
+          "id": "gray",
+          "name": "Серая",
+          "color": "#a9aca8",
+          "trim": "#f4f2ee",
+          "door": "#5a3e2b"
+        },
+        {
+          "id": "olive",
+          "name": "Олива",
+          "color": "#8a9070",
+          "trim": "#f4f2ee",
+          "door": "#5a3e2b"
+        }
       ]
     },
     {
-      "id": "siding", "name": "Сайдинг", "note": "Не требует покраски", "texture": "siding",
+      "id": "siding",
+      "name": "Сайдинг",
+      "note": "Не требует покраски",
+      "texture": "siding",
       "finishes": [
-        { "id": "white", "name": "Белый", "color": "#f1efe9", "trim": "#3b3f44", "door": "#6a4329" },
-        { "id": "beige", "name": "Бежевый", "color": "#e3d3b5", "trim": "#6b4a32", "door": "#6b4a32" },
-        { "id": "gray", "name": "Серый", "color": "#b8bcbf", "trim": "#f4f2ee", "door": "#3b3f44" },
-        { "id": "pistachio", "name": "Фисташковый", "color": "#c9d3b0", "trim": "#f4f2ee", "door": "#6a4329" }
+        {
+          "id": "white",
+          "name": "Белый",
+          "color": "#f1efe9",
+          "trim": "#3b3f44",
+          "door": "#6a4329"
+        },
+        {
+          "id": "beige",
+          "name": "Бежевый",
+          "color": "#e3d3b5",
+          "trim": "#6b4a32",
+          "door": "#6b4a32"
+        },
+        {
+          "id": "gray",
+          "name": "Серый",
+          "color": "#b8bcbf",
+          "trim": "#f4f2ee",
+          "door": "#3b3f44"
+        },
+        {
+          "id": "pistachio",
+          "name": "Фисташковый",
+          "color": "#c9d3b0",
+          "trim": "#f4f2ee",
+          "door": "#6a4329"
+        }
       ]
     },
     {
-      "id": "vertical", "name": "Доска с нащельником", "note": "Современный скандинавский стиль", "texture": "vertical",
+      "id": "vertical",
+      "name": "Доска с нащельником",
+      "note": "Современный скандинавский стиль",
+      "texture": "vertical",
       "finishes": [
-        { "id": "graphite", "name": "Графит", "color": "#45484c", "trim": "#45484c", "door": "#c48a52" },
-        { "id": "white", "name": "Белый", "color": "#f2f0ea", "trim": "#f2f0ea", "door": "#2f3236" },
-        { "id": "falun", "name": "Фалунский красный", "color": "#8e3b2f", "trim": "#f2efe8", "door": "#f2efe8" },
-        { "id": "natural", "name": "Натуральное дерево", "color": "#c99a62", "trim": "#c99a62", "door": "#3b3e42" }
+        {
+          "id": "graphite",
+          "name": "Графит",
+          "color": "#45484c",
+          "trim": "#45484c",
+          "door": "#c48a52"
+        },
+        {
+          "id": "white",
+          "name": "Белый",
+          "color": "#f2f0ea",
+          "trim": "#f2f0ea",
+          "door": "#2f3236"
+        },
+        {
+          "id": "falun",
+          "name": "Фалунский красный",
+          "color": "#8e3b2f",
+          "trim": "#f2efe8",
+          "door": "#f2efe8"
+        },
+        {
+          "id": "natural",
+          "name": "Натуральное дерево",
+          "color": "#c99a62",
+          "trim": "#c99a62",
+          "door": "#3b3e42"
+        }
       ]
     }
   ],
   "roofMaterials": [
     {
-      "id": "metaltile", "name": "Металлочерепица", "note": "Самая популярная", "texture": "metaltile",
+      "id": "metaltile",
+      "name": "Металлочерепица",
+      "note": "Самая популярная",
+      "texture": "metaltile",
       "finishes": [
-        { "id": "graphite", "name": "Графит", "color": "#33363a" },
-        { "id": "brown", "name": "Шоколад", "color": "#5a3a2a" },
-        { "id": "bordeaux", "name": "Вишня", "color": "#6c2329" },
-        { "id": "green", "name": "Зелёный мох", "color": "#2f4b37" }
+        {
+          "id": "graphite",
+          "name": "Графит",
+          "color": "#33363a"
+        },
+        {
+          "id": "brown",
+          "name": "Шоколад",
+          "color": "#5a3a2a"
+        },
+        {
+          "id": "bordeaux",
+          "name": "Вишня",
+          "color": "#6c2329"
+        },
+        {
+          "id": "green",
+          "name": "Зелёный мох",
+          "color": "#2f4b37"
+        }
       ]
     },
     {
-      "id": "profnastil", "name": "Профнастил", "note": "Бюджетно и надёжно", "texture": "profnastil",
+      "id": "profnastil",
+      "name": "Профнастил",
+      "note": "Бюджетно и надёжно",
+      "texture": "profnastil",
       "finishes": [
-        { "id": "graphite", "name": "Графит", "color": "#3a3d41" },
-        { "id": "brown", "name": "Шоколад", "color": "#5a3a2a" },
-        { "id": "green", "name": "Зелёный", "color": "#33533d" },
-        { "id": "gray", "name": "Серый", "color": "#7b8086" }
+        {
+          "id": "graphite",
+          "name": "Графит",
+          "color": "#3a3d41"
+        },
+        {
+          "id": "brown",
+          "name": "Шоколад",
+          "color": "#5a3a2a"
+        },
+        {
+          "id": "green",
+          "name": "Зелёный",
+          "color": "#33533d"
+        },
+        {
+          "id": "gray",
+          "name": "Серый",
+          "color": "#7b8086"
+        }
       ]
     },
     {
-      "id": "seam", "name": "Фальцевая кровля", "note": "Гладкая, без видимого крепежа", "texture": "seam",
+      "id": "seam",
+      "name": "Фальцевая кровля",
+      "note": "Гладкая, без видимого крепежа",
+      "texture": "seam",
       "finishes": [
-        { "id": "graphite", "name": "Графит", "color": "#3a3d41" },
-        { "id": "gray", "name": "Серый", "color": "#8a8f94" },
-        { "id": "brown", "name": "Коричневый", "color": "#5e4232" },
-        { "id": "terracotta", "name": "Терракота", "color": "#8b4a35" }
+        {
+          "id": "graphite",
+          "name": "Графит",
+          "color": "#3a3d41"
+        },
+        {
+          "id": "gray",
+          "name": "Серый",
+          "color": "#8a8f94"
+        },
+        {
+          "id": "brown",
+          "name": "Коричневый",
+          "color": "#5e4232"
+        },
+        {
+          "id": "terracotta",
+          "name": "Терракота",
+          "color": "#8b4a35"
+        }
       ]
     },
     {
-      "id": "shingle", "name": "Мягкая черепица", "note": "Тихая, не шумит в дождь", "texture": "shingle",
+      "id": "shingle",
+      "name": "Мягкая черепица",
+      "note": "Тихая, не шумит в дождь",
+      "texture": "shingle",
       "finishes": [
-        { "id": "brown", "name": "Коричневая", "color": "#6a4a36" },
-        { "id": "red", "name": "Красная", "color": "#7e3a2c" },
-        { "id": "gray", "name": "Серая", "color": "#5f6367" },
-        { "id": "green", "name": "Зелёная", "color": "#405645" }
+        {
+          "id": "brown",
+          "name": "Коричневая",
+          "color": "#6a4a36"
+        },
+        {
+          "id": "red",
+          "name": "Красная",
+          "color": "#7e3a2c"
+        },
+        {
+          "id": "gray",
+          "name": "Серая",
+          "color": "#5f6367"
+        },
+        {
+          "id": "green",
+          "name": "Зелёная",
+          "color": "#405645"
+        }
       ]
     }
   ],
   "plinths": [
-    { "id": "stone", "name": "Камень", "texture": "stone" },
-    { "id": "brick", "name": "Кирпич", "texture": "brick" },
-    { "id": "smooth", "name": "Штукатурка", "texture": "smooth" }
+    {
+      "id": "stone",
+      "name": "Камень",
+      "texture": "stone"
+    },
+    {
+      "id": "brick",
+      "name": "Кирпич",
+      "texture": "brick"
+    },
+    {
+      "id": "smooth",
+      "name": "Штукатурка",
+      "texture": "smooth"
+    },
+    {
+      "id": "none",
+      "name": "Без обшивки",
+      "texture": "smooth"
+    }
   ],
   "windowFrames": [
-    { "id": "white", "name": "Белые", "color": "#f6f5f2" },
-    { "id": "wood", "name": "Под дерево", "color": "#9a6335" },
-    { "id": "anthracite", "name": "Антрацит", "color": "#3a3f44" }
+    {
+      "id": "white",
+      "name": "Белые",
+      "color": "#f6f5f2"
+    },
+    {
+      "id": "wood",
+      "name": "Под дерево",
+      "color": "#9a6335"
+    },
+    {
+      "id": "anthracite",
+      "name": "Антрацит",
+      "color": "#3a3f44"
+    }
   ],
   "doorTypes": [
-    { "id": "wood", "name": "Деревянная", "texture": "planks" },
-    { "id": "metal", "name": "Металлическая утеплённая", "texture": "panel", "color": "#3d4044" }
+    {
+      "id": "wood",
+      "name": "Деревянная",
+      "texture": "planks"
+    },
+    {
+      "id": "metal",
+      "name": "Металлическая утеплённая",
+      "texture": "panel",
+      "color": "#3d4044"
+    }
   ],
   "windowTypes": [
-    { "id": "standard", "name": "Обычное", "size": "100 × 112 см", "w": 1.0, "h": 1.12, "sill": 0.88 },
-    { "id": "narrow", "name": "Узкое", "size": "60 × 112 см", "w": 0.6, "h": 1.12, "sill": 0.88 },
-    { "id": "wide", "name": "Широкое", "size": "150 × 112 см", "w": 1.5, "h": 1.12, "sill": 0.88 },
-    { "id": "small", "name": "Маленькое", "size": "60 × 60 см", "w": 0.6, "h": 0.6, "sill": 1.4 }
+    {
+      "id": "standard",
+      "name": "Обычное",
+      "size": "100 × 112 см",
+      "w": 1.0,
+      "h": 1.12,
+      "sill": 0.88
+    },
+    {
+      "id": "narrow",
+      "name": "Узкое",
+      "size": "60 × 112 см",
+      "w": 0.6,
+      "h": 1.12,
+      "sill": 0.88
+    },
+    {
+      "id": "wide",
+      "name": "Широкое",
+      "size": "150 × 112 см",
+      "w": 1.5,
+      "h": 1.12,
+      "sill": 0.88
+    },
+    {
+      "id": "small",
+      "name": "Маленькое",
+      "size": "60 × 60 см",
+      "w": 0.6,
+      "h": 0.6,
+      "sill": 1.4
+    }
   ],
   "roomTypes": [
-    { "id": "room", "name": "Комната", "floor": "wood", "color": "#f4ead6" },
-    { "id": "bedroom", "name": "Спальня", "floor": "wood", "color": "#ebe4f2" },
-    { "id": "kitchen", "name": "Кухня", "floor": "tile", "color": "#e3eedf" },
-    { "id": "bath", "name": "Санузел", "floor": "tile", "color": "#dceaf1" },
-    { "id": "hall", "name": "Тамбур", "floor": "wood", "color": "#efe8dc" },
-    { "id": "storage", "name": "Кладовая", "floor": "wood", "color": "#e8e5df" }
+    {
+      "id": "room",
+      "name": "Комната",
+      "floor": "wood",
+      "color": "#f4ead6"
+    },
+    {
+      "id": "bedroom",
+      "name": "Спальня",
+      "floor": "wood",
+      "color": "#ebe4f2"
+    },
+    {
+      "id": "kitchen",
+      "name": "Кухня",
+      "floor": "tile",
+      "color": "#e3eedf"
+    },
+    {
+      "id": "bath",
+      "name": "Санузел",
+      "floor": "tile",
+      "color": "#dceaf1"
+    },
+    {
+      "id": "hall",
+      "name": "Тамбур",
+      "floor": "wood",
+      "color": "#efe8dc"
+    },
+    {
+      "id": "storage",
+      "name": "Кладовая",
+      "floor": "wood",
+      "color": "#e8e5df"
+    }
   ],
   "included": [
-    "Каркас, пол и стены с утеплением 100 мм",
-    "Наружная отделка и кровля на выбор",
-    "Окна, входная дверь и межкомнатные перегородки",
-    "Доставка и сборка на участке"
+    "Каркас или брус, пол и утепление по выбранной комплектации",
+    "Наружная отделка, кровля и окна на выбор",
+    "Межкомнатные перегородки и двери по планировке",
+    "Фундамент, доставка и сборка на участке"
+  ],
+  "contacts": {
+    "demo": true,
+    "phone": "",
+    "whatsapp": "",
+    "telegram": "",
+    "email": "",
+    "address": "",
+    "hours": ""
+  },
+  "lead": {
+    "endpoint": "",
+    "privacyUrl": "privacy.html"
+  },
+  "metrikaId": "",
+  "roofTypes": [
+    {
+      "id": "gable",
+      "name": "Двускатная",
+      "note": "Классика"
+    },
+    {
+      "id": "shed",
+      "name": "Односкатная",
+      "note": "Современный вид, дешевле"
+    },
+    {
+      "id": "mansard",
+      "name": "Ломаная мансардная",
+      "note": "Второй этаж под крышей",
+      "minWidth": 5
+    }
+  ],
+  "foundations": [
+    {
+      "id": "piles",
+      "name": "Винтовые сваи",
+      "note": "Быстро, для любого грунта"
+    },
+    {
+      "id": "blocks",
+      "name": "Бетонные блоки",
+      "note": "Бюджетно, для лёгких домиков"
+    },
+    {
+      "id": "strip",
+      "name": "Ленточный",
+      "note": "Надёжно, для капитального дома"
+    }
+  ],
+  "constructions": [
+    {
+      "id": "frame",
+      "name": "Каркас",
+      "note": "Тёплый и лёгкий"
+    },
+    {
+      "id": "beam",
+      "name": "Брус 150 мм",
+      "note": "Массив дерева"
+    }
+  ],
+  "packages": [
+    {
+      "id": "summer",
+      "name": "Летний",
+      "note": "Утепление 50 мм, для тёплого сезона"
+    },
+    {
+      "id": "standard",
+      "name": "Утеплённый",
+      "note": "100 мм, с весны до осени"
+    },
+    {
+      "id": "winter",
+      "name": "Зимний",
+      "note": "150 мм и тёплый пол, круглый год"
+    }
+  ],
+  "terraces": [
+    {
+      "id": "none",
+      "name": "Без террасы"
+    },
+    {
+      "id": "front",
+      "name": "Открытая вдоль фасада"
+    },
+    {
+      "id": "side",
+      "name": "Под общей крышей сбоку"
+    }
+  ],
+  "terraceDepth": {
+    "min": 1.5,
+    "max": 3,
+    "step": 0.5
+  },
+  "presets": [
+    {
+      "id": "bytovka",
+      "name": "Бытовка 6×3",
+      "note": "Летний домик с тамбуром",
+      "patch": {
+        "length": 6,
+        "width": 3,
+        "roofType": "shed",
+        "package": "summer",
+        "construction": "frame",
+        "foundation": "blocks",
+        "plinth": "none",
+        "wallMaterial": "lining",
+        "wallFinish": "natural",
+        "roofMaterial": "profnastil",
+        "roofFinish": "graphite",
+        "windowFrame": "white",
+        "doorType": "wood",
+        "terrace": {
+          "type": "none",
+          "depth": 2
+        },
+        "canopy": true,
+        "plan": {
+          "tree": {
+            "split": "v",
+            "r": 0.3,
+            "door": 0.5,
+            "a": {
+              "room": "hall"
+            },
+            "b": {
+              "room": "room"
+            }
+          },
+          "openings": [
+            {
+              "id": "d1",
+              "kind": "door",
+              "wall": "front",
+              "pos": 0.15
+            },
+            {
+              "id": "w1",
+              "kind": "window",
+              "type": "standard",
+              "wall": "front",
+              "pos": 0.7
+            },
+            {
+              "id": "w2",
+              "kind": "window",
+              "type": "narrow",
+              "wall": "right",
+              "pos": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "classic",
+      "name": "Домик 6×4",
+      "note": "Кухня и комната",
+      "patch": {
+        "length": 6,
+        "width": 4,
+        "roofType": "gable",
+        "package": "standard",
+        "construction": "frame",
+        "foundation": "piles",
+        "plinth": "stone",
+        "wallMaterial": "imitation",
+        "wallFinish": "natural",
+        "roofMaterial": "metaltile",
+        "roofFinish": "graphite",
+        "windowFrame": "white",
+        "doorType": "wood",
+        "terrace": {
+          "type": "none",
+          "depth": 2
+        },
+        "canopy": true,
+        "plan": {
+          "tree": {
+            "split": "v",
+            "r": 0.38,
+            "door": 0.5,
+            "a": {
+              "room": "kitchen"
+            },
+            "b": {
+              "room": "room"
+            }
+          },
+          "openings": [
+            {
+              "id": "d1",
+              "kind": "door",
+              "wall": "front",
+              "pos": 0.25
+            },
+            {
+              "id": "w1",
+              "kind": "window",
+              "type": "standard",
+              "wall": "front",
+              "pos": 0.75
+            },
+            {
+              "id": "w2",
+              "kind": "window",
+              "type": "standard",
+              "wall": "right",
+              "pos": 0.5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "terrace",
+      "name": "Дом 6×6 с террасой",
+      "note": "Две спальни, санузел",
+      "patch": {
+        "length": 6,
+        "width": 6,
+        "roofType": "gable",
+        "package": "winter",
+        "construction": "frame",
+        "foundation": "piles",
+        "plinth": "brick",
+        "wallMaterial": "siding",
+        "wallFinish": "beige",
+        "roofMaterial": "shingle",
+        "roofFinish": "brown",
+        "windowFrame": "wood",
+        "doorType": "metal",
+        "terrace": {
+          "type": "side",
+          "depth": 2.5
+        },
+        "canopy": false,
+        "plan": {
+          "tree": {
+            "split": "h",
+            "r": 0.5,
+            "door": 0.6,
+            "a": {
+              "split": "v",
+              "r": 0.5,
+              "door": 0.5,
+              "a": {
+                "room": "bedroom"
+              },
+              "b": {
+                "room": "bedroom"
+              }
+            },
+            "b": {
+              "split": "v",
+              "r": 0.62,
+              "door": 0.5,
+              "a": {
+                "room": "kitchen"
+              },
+              "b": {
+                "room": "bath"
+              }
+            }
+          },
+          "openings": [
+            {
+              "id": "d1",
+              "kind": "door",
+              "wall": "right",
+              "pos": 0.75
+            },
+            {
+              "id": "w1",
+              "kind": "window",
+              "type": "standard",
+              "wall": "front",
+              "pos": 0.25
+            },
+            {
+              "id": "w2",
+              "kind": "window",
+              "type": "standard",
+              "wall": "back",
+              "pos": 0.25
+            },
+            {
+              "id": "w3",
+              "kind": "window",
+              "type": "standard",
+              "wall": "back",
+              "pos": 0.75
+            },
+            {
+              "id": "w4",
+              "kind": "window",
+              "type": "standard",
+              "wall": "left",
+              "pos": 0.5
+            },
+            {
+              "id": "w5",
+              "kind": "window",
+              "type": "small",
+              "wall": "front",
+              "pos": 0.85
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mansard",
+      "name": "Дом 8×6 с мансардой",
+      "note": "Брус, зимний, жилая мансарда",
+      "patch": {
+        "length": 8,
+        "width": 6,
+        "roofType": "mansard",
+        "package": "winter",
+        "construction": "beam",
+        "foundation": "strip",
+        "plinth": "stone",
+        "wallMaterial": "blockhouse",
+        "wallFinish": "honey",
+        "roofMaterial": "metaltile",
+        "roofFinish": "brown",
+        "windowFrame": "wood",
+        "doorType": "metal",
+        "terrace": {
+          "type": "front",
+          "depth": 2
+        },
+        "canopy": false,
+        "plan": {
+          "tree": {
+            "split": "v",
+            "r": 0.55,
+            "door": 0.5,
+            "a": {
+              "split": "h",
+              "r": 0.45,
+              "door": 0.5,
+              "a": {
+                "room": "kitchen"
+              },
+              "b": {
+                "room": "room"
+              }
+            },
+            "b": {
+              "split": "h",
+              "r": 0.5,
+              "door": 0.5,
+              "a": {
+                "room": "bath"
+              },
+              "b": {
+                "room": "hall"
+              }
+            }
+          },
+          "openings": [
+            {
+              "id": "d1",
+              "kind": "door",
+              "wall": "front",
+              "pos": 0.7
+            },
+            {
+              "id": "w1",
+              "kind": "window",
+              "type": "wide",
+              "wall": "front",
+              "pos": 0.25
+            },
+            {
+              "id": "w2",
+              "kind": "window",
+              "type": "standard",
+              "wall": "left",
+              "pos": 0.3
+            },
+            {
+              "id": "w3",
+              "kind": "window",
+              "type": "standard",
+              "wall": "back",
+              "pos": 0.2
+            },
+            {
+              "id": "w4",
+              "kind": "window",
+              "type": "small",
+              "wall": "back",
+              "pos": 0.8
+            },
+            {
+              "id": "w5",
+              "kind": "window",
+              "type": "standard",
+              "wall": "right",
+              "pos": 0.3
+            }
+          ]
+        }
+      }
+    }
   ]
 }

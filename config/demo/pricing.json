@@ -1,35 +1,118 @@
 {
   "comment": "Демонстрационные ставки в рублях. Производитель меняет только этот файл.",
   "roundTo": 1000,
-  "base": { "label": "Домокомплект: каркас, пол, утепление", "ratePerM2": 14000 },
+  "base": {
+    "label": "Домокомплект: каркас, пол, утепление",
+    "ratePerM2": {
+      "summer": 11500,
+      "standard": 14000,
+      "winter": 17500
+    }
+  },
   "wallMaterials": {
     "label": "Наружная отделка",
-    "ratePerM2": { "imitation": 900, "blockhouse": 1250, "lining": 700, "siding": 850, "vertical": 1050 }
+    "ratePerM2": {
+      "imitation": 900,
+      "blockhouse": 1250,
+      "lining": 700,
+      "siding": 850,
+      "vertical": 1050
+    }
   },
   "roofMaterials": {
     "label": "Кровля",
-    "ratePerM2": { "metaltile": 1900, "profnastil": 1300, "seam": 2900, "shingle": 2600 }
+    "ratePerM2": {
+      "metaltile": 1900,
+      "profnastil": 1300,
+      "seam": 2900,
+      "shingle": 2600
+    }
   },
   "plinths": {
     "label": "Отделка цоколя",
-    "ratePerM": { "stone": 1500, "brick": 1300, "smooth": 700 }
+    "ratePerM": {
+      "stone": 1500,
+      "brick": 1300,
+      "smooth": 700,
+      "none": 0
+    }
   },
   "windows": {
     "label": "Окна",
-    "price": { "standard": 19000, "narrow": 13000, "wide": 27000, "small": 9000 },
-    "frameSurcharge": { "white": 0, "wood": 3500, "anthracite": 2500 }
+    "price": {
+      "standard": 19000,
+      "narrow": 13000,
+      "wide": 27000,
+      "small": 9000
+    },
+    "frameSurcharge": {
+      "white": 0,
+      "wood": 3500,
+      "anthracite": 2500
+    }
   },
   "doors": {
     "label": "Входная дверь",
-    "price": { "wood": 18000, "metal": 26000 }
+    "price": {
+      "wood": 18000,
+      "metal": 26000
+    }
   },
-  "partitions": { "label": "Перегородки", "ratePerM": 3800 },
-  "interiorDoors": { "label": "Межкомнатные двери", "price": 6500 },
+  "partitions": {
+    "label": "Перегородки",
+    "ratePerM": 3800
+  },
+  "interiorDoors": {
+    "label": "Межкомнатные двери",
+    "price": 6500
+  },
   "rooms": {
     "label": "Подготовка помещения",
-    "price": { "bath": 28000, "kitchen": 12000 }
+    "price": {
+      "bath": 28000,
+      "kitchen": 12000
+    }
   },
   "fixed": [
-    { "id": "delivery", "label": "Доставка и сборка", "amount": 35000 }
-  ]
+    {
+      "id": "delivery",
+      "label": "Доставка и сборка",
+      "amount": 35000
+    }
+  ],
+  "constructions": {
+    "label": "Стены из бруса",
+    "ratePerM2Wall": {
+      "frame": 0,
+      "beam": 2400
+    }
+  },
+  "foundations": {
+    "label": "Фундамент",
+    "ratePerM2": {
+      "piles": 2200,
+      "blocks": 1500,
+      "strip": 4800
+    }
+  },
+  "roofTypes": {
+    "atticLabel": "Мансардный этаж: пол, утепление, отделка",
+    "atticRatePerM2": 9000,
+    "ratePerM2Extra": {
+      "gable": 0,
+      "shed": 0,
+      "mansard": 600
+    }
+  },
+  "terrace": {
+    "label": "Терраса",
+    "ratePerM2": {
+      "front": 7500,
+      "side": 11000
+    }
+  },
+  "canopy": {
+    "label": "Козырёк над входом",
+    "price": 9500
+  }
 }

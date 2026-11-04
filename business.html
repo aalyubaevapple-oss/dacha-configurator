@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3D-конфигуратор для производителей дачных домиков и бань</title>
+  <meta name="description" content="Покупатель собирает домик в 3D и сразу видит вашу цену. Заявка приходит с готовой конфигурацией. Подключение за 1 день, без сайта и программиста." />
+  <meta property="og:title" content="3D-конфигуратор для производителей дачных домиков" />
+  <meta property="og:description" content="Покупатель собирает домик в 3D и сразу видит вашу цену. Заявка приходит с готовой конфигурацией." />
+  <meta property="og:image" content="https://aalyubaevapple-oss.github.io/dacha-configurator/og.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 15 16 5l12 10v12H4z' fill='%232f5d46'/%3E%3C/svg%3E" />
+  <style>
+    :root { --accent: #2f5d46; --ink: #1d2124; --ink2: #5c6166; --line: #e6e2da; --bg: #f6f3ee; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: var(--ink); background: #fff; line-height: 1.5; }
+    a { color: var(--accent); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+    header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    .logo i { width: 32px; height: 32px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; }
+    .logo svg { width: 18px; fill: #fff; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 12px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--accent); }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn.ghost { background: #fff; color: var(--accent); }
+    .hero { background: var(--bg); padding: 56px 0 64px; }
+    .hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+    h1 { font-size: clamp(30px, 4.4vw, 46px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -.02em; }
+    .lead { font-size: 18px; color: var(--ink2); margin: 0 0 26px; }
+    .hero img { width: 100%; border-radius: 18px; box-shadow: 0 10px 40px rgba(40, 35, 20, .15); }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    section { padding: 64px 0; }
+    h2 { font-size: clamp(24px, 3vw, 34px); margin: 0 0 28px; letter-spacing: -.01em; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; counter-reset: s; }
+    .card { border: 1px solid var(--line); border-radius: 16px; padding: 22px; background: #fff; }
+    .steps .card::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; margin-bottom: 12px; }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--ink2); }
+    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 30px; padding: 0; list-style: none; }
+    .features li { padding-left: 30px; position: relative; }
+    .features li::before { content: ''; position: absolute; left: 0; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: #e2e9e5; box-shadow: inset 0 0 0 5px var(--accent); }
+    .features b { display: block; }
+    .features span { color: var(--ink2); }
+    .alt { background: var(--bg); }
+    .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 820px; }
+    .plan .price { font-size: 34px; font-weight: 750; margin: 6px 0 4px; }
+    .plan .price small { font-size: 16px; color: var(--ink2); font-weight: 500; }
+    .plan ul { margin: 14px 0 0; padding-left: 20px; color: var(--ink2); }
+    .plan.best { border: 2px solid var(--accent); }
+    .note { color: var(--ink2); margin-top: 18px; }
+    details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+    summary { font-weight: 600; cursor: pointer; }
+    details p { color: var(--ink2); margin: 8px 0 0; }
+    .contact { text-align: center; }
+    .contact .actions { justify-content: center; }
+    footer { padding: 26px 0; color: var(--ink2); font-size: 14px; border-top: 1px solid var(--line); }
+    @media (max-width: 820px) {
+      .hero .wrap, .steps, .features, .plans { grid-template-columns: 1fr; }
+      .hero { padding: 32px 0 44px; }
+      section { padding: 44px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>3D-конфигуратор с вашей ценой для дачных домиков и бань</h1>
+        <p class="lead">Покупатель сам собирает домик: размеры, материалы, терраса, планировка. И сразу видит стоимость по вашему прайсу. Вам приходит заявка с готовой конфигурацией и коммерческим предложением.</p>
+        <div class="actions">
+          <a class="btn primary" href="./">Открыть демо</a>
+          <a class="btn ghost" href="#price">Сколько стоит</a>
+        </div>
+      </div>
+      <img src="og.jpg" alt="Дачный домик в 3D-конфигураторе" width="1200" height="630" />
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Как это работает</h2>
+      <div class="steps">
+        <div class="card"><h3>Настраиваем под вас</h3><p>Ваши размеры, материалы, комплектации и цены. Логотип и контакты. Сайт не нужен.</p></div>
+        <div class="card"><h3>Ставите ссылку</h3><p>В объявление на Авито, в группу VK, в Telegram или на сайт виджетом.</p></div>
+        <div class="card"><h3>Получаете заявки</h3><p>Покупатель пишет вам в WhatsApp, Telegram или на почту с готовым домиком, ценой и ссылкой на конфигурацию.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Что умеет конфигуратор</h2>
+      <ul class="features">
+        <li><b>Домик в 3D</b><span>Размеры, форма крыши (двускатная, односкатная, мансардная), терраса, фундамент.</span></li>
+        <li><b>Материалы с текстурами</b><span>Имитация бруса, блок-хаус, вагонка, сайдинг; металлочерепица, профнастил, фальц, мягкая черепица.</span></li>
+        <li><b>Планировка</b><span>Покупатель двигает перегородки, окна и двери, видит мебель и площади комнат.</span></li>
+        <li><b>Цена сразу</b><span>По вашим ставкам: за м², за окно, за терраску, за утепление. Меняется в одном файле.</span></li>
+        <li><b>КП в PDF</b><span>С картинкой дома, планом, комплектацией, расчётом и QR-кодом на конфигурацию.</span></li>
+        <li><b>Работает на телефоне</b><span>Большинство покупателей открывают ссылку из объявления со смартфона.</span></li>
+        <li><b>Готовые проекты</b><span>Ваши типовые модели одной кнопкой. Покупатель начинает с них и меняет под себя.</span></li>
+        <li><b>Аналитика</b><span>Подключаем Яндекс Метрику: сколько открыли, что выбирали, сколько написали.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <h2>Стоимость</h2>
+      <div class="plans">
+        <div class="card plan">
+          <h3>Старт</h3>
+          <div class="price">1 990 ₽ <small>в месяц</small></div>
+          <ul><li>Конфигуратор по ссылке</li><li>Ваши цены и материалы</li><li>Заявки в WhatsApp, Telegram, на почту</li><li>КП в PDF</li></ul>
+        </div>
+        <div class="card plan best">
+          <h3>Бизнес</h3>
+          <div class="price">3 990 ₽ <small>в месяц</small></div>
+          <ul><li>Всё из «Старта»</li><li>Виджет на ваш сайт</li><li>Логотип и фирменный цвет</li><li>Форма заявки с телефоном и аналитика</li></ul>
+        </div>
+      </div>
+      <p class="note">Настройка под ваш ассортимент и прайс: 10 000 ₽ разово. Первый месяц пользования бесплатно, чтобы вы проверили, приходят ли заявки.</p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <h2>Вопросы</h2>
+      <details><summary>У меня нет сайта. Это подойдёт?</summary><p>Да. Конфигуратор открывается по ссылке, её можно поставить в объявление на Авито, в VK или отправить в мессенджере.</p></details>
+      <details><summary>Цены у меня не за метр, а комплектациями</summary><p>Расчёт настраивается: базовая ставка зависит от комплектации («летний», «утеплённый», «зимний»), отдельно считаются окна, двери, терраса, фундамент. Под ваш прайс подстроим при настройке.</p></details>
+      <details><summary>Это точная смета?</summary><p>Нет, это предварительная цена, о чём покупатель видит пометку. Точную стоимость вы называете после разговора или выезда.</p></details>
+      <details><summary>Можно показать мои модели, а не эти?</summary><p>Можно ограничить размеры, набор материалов, формы крыши и задать ваши готовые проекты. Сложные индивидуальные модели обсуждаются отдельно.</p></details>
+      <details><summary>Что с персональными данными покупателей?</summary><p>По умолчанию покупатель пишет вам сам через свой мессенджер, и конфигуратор его данные не собирает. Если нужна форма с телефоном, её размещаем на хостинге в России и добавляем согласие и политику обработки данных.</p></details>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <h2>Попробуйте на своём ассортименте</h2>
+      <p class="lead">Откройте демо с телефона, как это сделает ваш покупатель.</p>
+      <div class="actions" id="contactActions">
+        <a class="btn primary" href="./">Открыть демо</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="wrap">3D-конфигуратор для производителей дачных домиков и бань</div></footer>
+
+  <script>
+    // Контакты продавца конфигуратора: заполните — и кнопки появятся.
+    var SELLER = { telegram: '', whatsapp: '', email: '' };
+    var box = document.getElementById('contactActions');
+    function add(href, text) { var a = document.createElement('a'); a.className = 'btn ghost'; a.href = href; a.textContent = text; a.target = '_blank'; a.rel = 'noopener'; box.appendChild(a); }
+    if (SELLER.telegram) add('https://t.me/' + SELLER.telegram.replace(/^@/, ''), 'Написать в Telegram');
+    if (SELLER.whatsapp) add('https://wa.me/' + SELLER.whatsapp.replace(/\D/g, ''), 'Написать в WhatsApp');
+    if (SELLER.email) add('mailto:' + SELLER.email, 'Написать на почту');
+  </script>
+</body>
+</html>

@@ -4,11 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#efebe4" />
-    <meta name="description" content="Соберите дачный домик в 3D: размеры, материалы, планировка — и сразу узнайте предварительную стоимость." />
     <title>Конфигуратор дачного домика</title>
+    <meta name="description" content="Соберите дачный домик в 3D: размеры, материалы, терраса, планировка — и сразу узнайте предварительную стоимость." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Конфигуратор дачного домика" />
+    <meta property="og:description" content="Соберите домик в 3D — размеры, материалы, планировка — и сразу узнайте цену." />
+    <meta property="og:image" content="https://aalyubaevapple-oss.github.io/dacha-configurator/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 15 16 5l12 10v12H4z' fill='%232f5d46'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-CazeqDKa.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DWK7kgDP.css">
+    <script type="module" crossorigin src="./assets/index-DasNk80q.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-6UzlUPnS.css">
   </head>
   <body>
     <div class="app" id="app" data-page="house">
@@ -61,8 +69,9 @@
 
       <aside class="panel">
         <nav class="tabs" role="tablist" aria-label="Шаги">
-          <button type="button" role="tab" data-page="house"><b>1</b>Дом и материалы</button>
+          <button type="button" role="tab" data-page="house"><b>1</b>Дом</button>
           <button type="button" role="tab" data-page="plan"><b>2</b>Планировка</button>
+          <button type="button" role="tab" data-page="summary"><b>3</b>Итог</button>
         </nav>
 
         <div class="panel-scroll" id="panelScroll">
@@ -72,9 +81,30 @@
               <p data-bind="subtitle"></p>
             </header>
 
+            <section class="group" aria-labelledby="g-presets">
+              <h2 id="g-presets">Готовые проекты</h2>
+              <div id="presets"></div>
+            </section>
+
             <section class="group" aria-labelledby="g-size">
               <h2 id="g-size">Размеры</h2>
               <div id="dimensions"></div>
+            </section>
+
+            <section class="group" aria-labelledby="g-build">
+              <h2 id="g-build">Конструкция и утепление</h2>
+              <div id="constructions" role="radiogroup" aria-label="Конструкция стен"></div>
+              <div class="label">Для какого сезона</div>
+              <div id="packages" role="radiogroup" aria-label="Утепление"></div>
+              <div class="label">Фундамент</div>
+              <div id="foundations" role="radiogroup" aria-label="Фундамент"></div>
+            </section>
+
+            <section class="group" aria-labelledby="g-roof">
+              <h2 id="g-roof">Крыша</h2>
+              <div id="roofTypes" role="radiogroup" aria-label="Форма крыши"></div>
+              <div class="label">Покрытие</div>
+              <div id="roofMaterials"></div>
             </section>
 
             <section class="group" aria-labelledby="g-wall">
@@ -82,9 +112,9 @@
               <div id="wallMaterials"></div>
             </section>
 
-            <section class="group" aria-labelledby="g-roof">
-              <h2 id="g-roof">Кровля</h2>
-              <div id="roofMaterials"></div>
+            <section class="group" aria-labelledby="g-terrace">
+              <h2 id="g-terrace">Терраса и крыльцо</h2>
+              <div id="terrace"></div>
             </section>
 
             <section class="group" aria-labelledby="g-more">
@@ -108,7 +138,15 @@
             </button>
           </div>
 
-          <div class="page" data-page="plan" id="planPanel"></div>
+          <div class="page" data-page="plan">
+            <div id="planPanel"></div>
+            <button type="button" class="next-btn" data-goto="summary">
+              Дальше: итог и заявка
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+            </button>
+          </div>
+
+          <div class="page" data-page="summary" id="summaryPanel"></div>
         </div>
 
         <footer class="price" id="price">
@@ -117,10 +155,13 @@
               <div class="price-label">Предварительная стоимость</div>
               <div class="price-value" id="priceValue">—</div>
             </div>
-            <button class="breakdown-btn" id="breakdownBtn" type="button" aria-expanded="false" aria-controls="breakdown">
-              Из чего цена
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" /></svg>
-            </button>
+            <div class="price-actions">
+              <button class="breakdown-btn" id="breakdownBtn" type="button" aria-expanded="false" aria-controls="breakdown" aria-label="Из чего складывается цена">
+                <span class="bd-text">Из чего цена</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6" /></svg>
+              </button>
+              <button class="cta-btn" type="button" data-goto="summary">Итог и заявка</button>
+            </div>
           </div>
           <ul class="breakdown" id="breakdown" hidden></ul>
           <p class="price-note">Расчёт предварительный. Итоговая стоимость уточняется у производителя.</p>
