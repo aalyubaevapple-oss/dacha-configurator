@@ -1,21 +1,35 @@
 {
   "comment": "Демонстрационные ставки в рублях. Производитель меняет только этот файл.",
-  "baseRatePerM2": 16500,
-  "baseLabel": "Домокомплект: каркас, пол, стены",
-  "roofRatePerM2": 1900,
-  "roofLabel": "Кровля из металлочерепицы",
-  "wallFinishRatePerM2": {
-    "natural": 0,
-    "oak": 0,
-    "brown": 250,
-    "walnut": 250,
-    "gray": 350,
-    "white": 350
+  "roundTo": 1000,
+  "base": { "label": "Домокомплект: каркас, пол, утепление", "ratePerM2": 14000 },
+  "wallMaterials": {
+    "label": "Наружная отделка",
+    "ratePerM2": { "imitation": 900, "blockhouse": 1250, "lining": 700, "siding": 850, "vertical": 1050 }
   },
-  "wallFinishLabel": "Покраска стен",
+  "roofMaterials": {
+    "label": "Кровля",
+    "ratePerM2": { "metaltile": 1900, "profnastil": 1300, "seam": 2900, "shingle": 2600 }
+  },
+  "plinths": {
+    "label": "Отделка цоколя",
+    "ratePerM": { "stone": 1500, "brick": 1300, "smooth": 700 }
+  },
+  "windows": {
+    "label": "Окна",
+    "price": { "standard": 19000, "narrow": 13000, "wide": 27000, "small": 9000 },
+    "frameSurcharge": { "white": 0, "wood": 3500, "anthracite": 2500 }
+  },
+  "doors": {
+    "label": "Входная дверь",
+    "price": { "wood": 18000, "metal": 26000 }
+  },
+  "partitions": { "label": "Перегородки", "ratePerM": 3800 },
+  "interiorDoors": { "label": "Межкомнатные двери", "price": 6500 },
+  "rooms": {
+    "label": "Подготовка помещения",
+    "price": { "bath": 28000, "kitchen": 12000 }
+  },
   "fixed": [
-    { "id": "openings", "label": "Окна и входная дверь", "amount": 38000 },
     { "id": "delivery", "label": "Доставка и сборка", "amount": 35000 }
-  ],
-  "roundTo": 1000
+  ]
 }

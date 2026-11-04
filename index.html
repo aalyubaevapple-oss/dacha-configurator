@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#efebe4" />
-    <meta name="description" content="Соберите дачный домик в 3D и сразу узнайте предварительную стоимость." />
+    <meta name="description" content="Соберите дачный домик в 3D: размеры, материалы, планировка — и сразу узнайте предварительную стоимость." />
     <title>Конфигуратор дачного домика</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 15 16 5l12 10v12H4z' fill='%232f5d46'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-BzQgVNyH.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CE2rLWNR.css">
+    <script type="module" crossorigin src="./assets/index-B-7malUL.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BFOI71SG.css">
   </head>
   <body>
-    <div class="app" id="app">
-      <main class="viewer" id="viewer" aria-label="3D-модель домика">
+    <div class="app" id="app" data-page="house">
+      <main class="viewer" id="viewer" aria-label="Модель домика">
         <div class="viewer-top">
           <div class="brand">
             <span class="brand-mark" aria-hidden="true">
@@ -21,8 +21,14 @@
             <span class="brand-name" data-bind="brand"></span>
             <span class="badge" data-bind="badge"></span>
           </div>
+          <div class="seg" id="viewSwitch" role="tablist" aria-label="Вид планировки">
+            <button type="button" role="tab" data-view="2d">План</button>
+            <button type="button" role="tab" data-view="3d">3D без крыши</button>
+          </div>
           <div class="dims-chip" id="dimsChip"></div>
         </div>
+
+        <div class="plan-view" id="planView"></div>
 
         <div class="hint" id="hint">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v4.5a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.6-2.2L4.2 15a1.5 1.5 0 0 1 2.3-1.9L9 15.5" /></svg>
@@ -45,37 +51,55 @@
       </main>
 
       <aside class="panel">
-        <div class="panel-scroll">
-          <header class="panel-head">
-            <h1 data-bind="title"></h1>
-            <p data-bind="subtitle"></p>
-          </header>
+        <nav class="tabs" role="tablist" aria-label="Шаги">
+          <button type="button" role="tab" data-page="house"><b>1</b>Дом и материалы</button>
+          <button type="button" role="tab" data-page="plan"><b>2</b>Планировка</button>
+        </nav>
 
-          <section class="group" aria-labelledby="g-size">
-            <h2 id="g-size">Размеры</h2>
-            <div id="dimensions"></div>
-          </section>
+        <div class="panel-scroll" id="panelScroll">
+          <div class="page" data-page="house">
+            <header class="panel-head">
+              <h1 data-bind="title"></h1>
+              <p data-bind="subtitle"></p>
+            </header>
 
-          <section class="group" aria-labelledby="g-wall">
-            <div class="group-title">
-              <h2 id="g-wall">Цвет стен</h2>
-              <span class="picked" id="wallPicked"></span>
-            </div>
-            <div class="swatches" id="wallColors" role="radiogroup" aria-labelledby="g-wall"></div>
-          </section>
+            <section class="group" aria-labelledby="g-size">
+              <h2 id="g-size">Размеры</h2>
+              <div id="dimensions"></div>
+            </section>
 
-          <section class="group" aria-labelledby="g-roof">
-            <div class="group-title">
-              <h2 id="g-roof">Цвет кровли</h2>
-              <span class="picked" id="roofPicked"></span>
-            </div>
-            <div class="swatches" id="roofColors" role="radiogroup" aria-labelledby="g-roof"></div>
-          </section>
+            <section class="group" aria-labelledby="g-wall">
+              <h2 id="g-wall">Отделка стен</h2>
+              <div id="wallMaterials"></div>
+            </section>
 
-          <section class="group included" aria-labelledby="g-inc">
-            <h2 id="g-inc">Пример комплектации</h2>
-            <ul id="included"></ul>
-          </section>
+            <section class="group" aria-labelledby="g-roof">
+              <h2 id="g-roof">Кровля</h2>
+              <div id="roofMaterials"></div>
+            </section>
+
+            <section class="group" aria-labelledby="g-more">
+              <h2 id="g-more">Цоколь, окна и дверь</h2>
+              <div class="label">Отделка цоколя</div>
+              <div id="plinths" role="radiogroup" aria-label="Отделка цоколя"></div>
+              <div class="label">Рамы окон</div>
+              <div id="frames" role="radiogroup" aria-label="Рамы окон"></div>
+              <div class="label">Входная дверь</div>
+              <div id="doorTypes" role="radiogroup" aria-label="Входная дверь"></div>
+            </section>
+
+            <section class="group included" aria-labelledby="g-inc">
+              <h2 id="g-inc">Что входит</h2>
+              <ul id="included"></ul>
+            </section>
+
+            <button type="button" class="next-btn" data-goto="plan">
+              Дальше: планировка
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" /></svg>
+            </button>
+          </div>
+
+          <div class="page" data-page="plan" id="planPanel"></div>
         </div>
 
         <footer class="price" id="price">
