@@ -1,0 +1,40 @@
+{
+  "id": "demo",
+  "brand": "Демо-производитель",
+  "badge": "Демо-версия",
+  "title": "Дачный домик",
+  "subtitle": "Настройте размеры и цвета: модель и цена обновятся сразу.",
+  "accent": "#2f5d46",
+  "limits": {
+    "length": { "min": 3, "max": 9, "step": 0.5 },
+    "width": { "min": 3, "max": 7, "step": 0.5 }
+  },
+  "defaults": {
+    "length": 6,
+    "width": 4,
+    "wallColor": "natural",
+    "roofColor": "graphite"
+  },
+  "wallColors": [
+    { "id": "natural", "name": "Натуральное дерево", "color": "#d6a465", "trim": "#f5f1e8", "door": "#6a4329" },
+    { "id": "oak", "name": "Светлый дуб", "color": "#e9d3a8", "trim": "#5b3e2a", "door": "#5b3e2a" },
+    { "id": "brown", "name": "Тёплый коричневый", "color": "#a8693a", "trim": "#f2ede3", "door": "#4a2e1d" },
+    { "id": "walnut", "name": "Тёмный орех", "color": "#6a4129", "trim": "#efe8da", "door": "#d0a26a" },
+    { "id": "gray", "name": "Светло-серый", "color": "#c9cbc7", "trim": "#3a3d41", "door": "#3a3d41" },
+    { "id": "white", "name": "Белый", "color": "#f3f1ec", "trim": "#4d3627", "door": "#6a4329" }
+  ],
+  "roofColors": [
+    { "id": "graphite", "name": "Графит", "color": "#33363a" },
+    { "id": "brown", "name": "Коричневый", "color": "#5a3a2a" },
+    { "id": "bordeaux", "name": "Бордовый", "color": "#6c2329" },
+    { "id": "green", "name": "Зелёный", "color": "#2f4b37" },
+    { "id": "darkgray", "name": "Тёмно-серый", "color": "#5c6066" }
+  ],
+  "included": [
+    "Каркас и стены с утеплением 100 мм",
+    "Наружная обшивка «имитация бруса»",
+    "Кровля из металлочерепицы",
+    "Два пластиковых окна и входная дверь",
+    "Доставка и сборка на участке"
+  ]
+}
