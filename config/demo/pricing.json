@@ -70,7 +70,8 @@
     "label": "Подготовка помещения",
     "price": {
       "bath": 28000,
-      "kitchen": 12000
+      "kitchen": 12000,
+      "living": 12000
     }
   },
   "fixed": [

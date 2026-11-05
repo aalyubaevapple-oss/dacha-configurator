@@ -15,8 +15,8 @@
     <meta property="og:locale" content="ru_RU" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 15 16 5l12 10v12H4z' fill='%232f5d46'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-DasNk80q.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-6UzlUPnS.css">
+    <script type="module" crossorigin src="./assets/index-BIGbj8pn.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CARo1mpF.css">
   </head>
   <body>
     <div class="app" id="app" data-page="house">
@@ -59,9 +59,22 @@
           <button class="tool" id="zoomOut" type="button" aria-label="Отдалить">
             <svg viewBox="0 0 24 24"><path d="M5 12h14" /></svg>
           </button>
+          <button class="tool" id="sunBtn" type="button" aria-label="Солнце и стороны света" title="Солнце и стороны света" aria-pressed="false">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+          </button>
           <button class="tool" id="resetView" type="button" aria-label="Исходный ракурс">
             <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" /></svg>
           </button>
+        </div>
+
+        <button class="walk-btn" id="walkBtn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="13" cy="4.5" r="1.8"/><path d="m9.5 21 2.2-6.3 2.8 2.8V21M7.5 12.5l1.8-4.2 3.6-.8 2.4 3.2 2.7 1.2M11.7 14.7 13 8"/></svg>
+          Прогулка<span class="walk-long">&nbsp;по дому</span></button>
+        <div class="sun-panel" id="sunPanel" hidden></div>
+        <div class="walk-hud" id="walkHud" hidden>
+          <div class="walk-room" id="walkRoom"></div>
+          <button class="walk-exit" id="walkExit" type="button">Выйти</button>
+          <div class="walk-help" id="walkHelp"><span class="only-mouse">Тяните мышью, чтобы осмотреться. Нажмите на пол — дойдём туда. Клавиши W A S D или стрелки — ходьба.</span><span class="only-touch">Ведите пальцем, чтобы осмотреться. Нажмите на пол — дойдём туда.</span></div>
         </div>
 
         <div class="loader" id="loader"><span></span>Строим домик…</div>
@@ -84,6 +97,11 @@
             <section class="group" aria-labelledby="g-presets">
               <h2 id="g-presets">Готовые проекты</h2>
               <div id="presets"></div>
+            </section>
+
+            <section class="group" aria-labelledby="g-budget">
+              <h2 id="g-budget">Подобрать под бюджет</h2>
+              <div id="budget"></div>
             </section>
 
             <section class="group" aria-labelledby="g-size">

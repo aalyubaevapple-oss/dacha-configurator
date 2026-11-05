@@ -474,6 +474,12 @@
       "color": "#e3eedf"
     },
     {
+      "id": "living",
+      "name": "Кухня-гостиная",
+      "floor": "wood",
+      "color": "#f3dcc4"
+    },
+    {
       "id": "bath",
       "name": "Санузел",
       "floor": "tile",
@@ -908,6 +914,399 @@
             }
           ]
         }
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "id": "summer",
+      "name": "Летний с кладовой",
+      "note": "Тамбур и кладовая у входа, одна большая комната",
+      "min": {
+        "length": 5,
+        "width": 3
+      },
+      "plan": {
+        "tree": {
+          "split": "v",
+          "r": 0.68,
+          "door": 0.78,
+          "a": {
+            "room": "living"
+          },
+          "b": {
+            "split": "h",
+            "r": 0.5,
+            "door": 0.5,
+            "a": {
+              "room": "storage"
+            },
+            "b": {
+              "room": "hall"
+            }
+          }
+        },
+        "openings": [
+          {
+            "id": "d1",
+            "kind": "door",
+            "wall": "front",
+            "pos": 0.86
+          },
+          {
+            "id": "w1",
+            "kind": "window",
+            "type": "standard",
+            "wall": "front",
+            "pos": 0.35
+          },
+          {
+            "id": "w2",
+            "kind": "window",
+            "type": "standard",
+            "wall": "left",
+            "pos": 0.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "studio",
+      "name": "Студия с санузлом",
+      "note": "Санузел у входа, кухня-гостиная со светом с трёх сторон",
+      "min": {
+        "length": 5,
+        "width": 4
+      },
+      "plan": {
+        "tree": {
+          "split": "v",
+          "r": 0.3,
+          "door": 0.75,
+          "a": {
+            "split": "h",
+            "r": 0.5,
+            "door": 0.5,
+            "a": {
+              "room": "bath"
+            },
+            "b": {
+              "room": "hall"
+            }
+          },
+          "b": {
+            "room": "living"
+          }
+        },
+        "openings": [
+          {
+            "id": "d1",
+            "kind": "door",
+            "wall": "front",
+            "pos": 0.15
+          },
+          {
+            "id": "w1",
+            "kind": "window",
+            "type": "standard",
+            "wall": "front",
+            "pos": 0.65
+          },
+          {
+            "id": "w2",
+            "kind": "window",
+            "type": "standard",
+            "wall": "right",
+            "pos": 0.5
+          },
+          {
+            "id": "w3",
+            "kind": "window",
+            "type": "standard",
+            "wall": "back",
+            "pos": 0.65
+          },
+          {
+            "id": "w4",
+            "kind": "window",
+            "type": "small",
+            "wall": "back",
+            "pos": 0.15
+          }
+        ]
+      }
+    },
+    {
+      "id": "one-bedroom",
+      "name": "Спальня и кухня-гостиная",
+      "note": "Без коридора: тамбур ведёт в спальню, санузел и общую зону",
+      "min": {
+        "length": 6,
+        "width": 4
+      },
+      "plan": {
+        "tree": {
+          "split": "v",
+          "r": 0.45,
+          "door": 0.8,
+          "a": {
+            "room": "living"
+          },
+          "b": {
+            "split": "h",
+            "r": 0.6,
+            "door": 0.25,
+            "a": {
+              "room": "bedroom"
+            },
+            "b": {
+              "split": "v",
+              "r": 0.5,
+              "door": 0.5,
+              "a": {
+                "room": "hall"
+              },
+              "b": {
+                "room": "bath"
+              }
+            }
+          }
+        },
+        "openings": [
+          {
+            "id": "d1",
+            "kind": "door",
+            "wall": "front",
+            "pos": 0.62
+          },
+          {
+            "id": "w1",
+            "kind": "window",
+            "type": "standard",
+            "wall": "front",
+            "pos": 0.25
+          },
+          {
+            "id": "w2",
+            "kind": "window",
+            "type": "standard",
+            "wall": "left",
+            "pos": 0.5
+          },
+          {
+            "id": "w3",
+            "kind": "window",
+            "type": "standard",
+            "wall": "back",
+            "pos": 0.75
+          },
+          {
+            "id": "w4",
+            "kind": "window",
+            "type": "standard",
+            "wall": "right",
+            "pos": 0.3
+          },
+          {
+            "id": "w5",
+            "kind": "window",
+            "type": "small",
+            "wall": "front",
+            "pos": 0.9
+          }
+        ]
+      }
+    },
+    {
+      "id": "two-bedrooms",
+      "name": "Две спальни",
+      "note": "Спальни в тихой задней части, общая зона у входа",
+      "min": {
+        "length": 6,
+        "width": 5
+      },
+      "plan": {
+        "tree": {
+          "split": "v",
+          "r": 0.5,
+          "door": 0.8,
+          "a": {
+            "split": "h",
+            "r": 0.5,
+            "door": 0.5,
+            "a": {
+              "room": "bedroom"
+            },
+            "b": {
+              "room": "living"
+            }
+          },
+          "b": {
+            "split": "h",
+            "r": 0.5,
+            "door": 0.25,
+            "a": {
+              "room": "bedroom"
+            },
+            "b": {
+              "split": "v",
+              "r": 0.58,
+              "door": 0.5,
+              "a": {
+                "room": "hall"
+              },
+              "b": {
+                "room": "bath"
+              }
+            }
+          }
+        },
+        "openings": [
+          {
+            "id": "d1",
+            "kind": "door",
+            "wall": "front",
+            "pos": 0.62
+          },
+          {
+            "id": "w1",
+            "kind": "window",
+            "type": "standard",
+            "wall": "back",
+            "pos": 0.27
+          },
+          {
+            "id": "w2",
+            "kind": "window",
+            "type": "standard",
+            "wall": "left",
+            "pos": 0.25
+          },
+          {
+            "id": "w3",
+            "kind": "window",
+            "type": "standard",
+            "wall": "front",
+            "pos": 0.27
+          },
+          {
+            "id": "w4",
+            "kind": "window",
+            "type": "standard",
+            "wall": "left",
+            "pos": 0.75
+          },
+          {
+            "id": "w5",
+            "kind": "window",
+            "type": "standard",
+            "wall": "back",
+            "pos": 0.78
+          },
+          {
+            "id": "w6",
+            "kind": "window",
+            "type": "standard",
+            "wall": "right",
+            "pos": 0.25
+          },
+          {
+            "id": "w7",
+            "kind": "window",
+            "type": "small",
+            "wall": "front",
+            "pos": 0.92
+          }
+        ]
+      }
+    },
+    {
+      "id": "suite",
+      "name": "Спальня со своим санузлом",
+      "note": "Санузел при спальне, кладовая у входа",
+      "min": {
+        "length": 6,
+        "width": 5
+      },
+      "plan": {
+        "tree": {
+          "split": "v",
+          "r": 0.66,
+          "door": 0.78,
+          "a": {
+            "split": "h",
+            "r": 0.5,
+            "door": 0.3,
+            "a": {
+              "split": "v",
+              "r": 0.64,
+              "door": 0.5,
+              "a": {
+                "room": "bedroom"
+              },
+              "b": {
+                "room": "bath"
+              }
+            },
+            "b": {
+              "room": "living"
+            }
+          },
+          "b": {
+            "split": "h",
+            "r": 0.45,
+            "door": 0.5,
+            "a": {
+              "room": "storage"
+            },
+            "b": {
+              "room": "hall"
+            }
+          }
+        },
+        "openings": [
+          {
+            "id": "d1",
+            "kind": "door",
+            "wall": "front",
+            "pos": 0.82
+          },
+          {
+            "id": "w1",
+            "kind": "window",
+            "type": "standard",
+            "wall": "back",
+            "pos": 0.2
+          },
+          {
+            "id": "w2",
+            "kind": "window",
+            "type": "standard",
+            "wall": "left",
+            "pos": 0.25
+          },
+          {
+            "id": "w3",
+            "kind": "window",
+            "type": "small",
+            "wall": "back",
+            "pos": 0.5
+          },
+          {
+            "id": "w4",
+            "kind": "window",
+            "type": "standard",
+            "wall": "front",
+            "pos": 0.3
+          },
+          {
+            "id": "w5",
+            "kind": "window",
+            "type": "standard",
+            "wall": "left",
+            "pos": 0.75
+          }
+        ]
       }
     }
   ]
